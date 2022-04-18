@@ -1,6 +1,8 @@
 # azure-terrafy-walkthrough
+Welcome to the Azure Terrafy guide for importing your existing Azure infrastructure under Terraform management. The installation steps in this guide focus on a Windows deployment, but the import steps are consistent across all environments (MacOS,Unix,Linux,BSD)
 
-## Steps
+
+## Deployment Steps
  
  ## Dependencies 
  - Install Terraform https://www.terraform.io/downloads
@@ -202,10 +204,10 @@ resource "azurerm_network_interface" "res-2" {
 lets run a terraform plan on our recently imported terraform configuration (vm-resources) to verify the import was a success, hopefully you will be greeted by the below message
 ```
 No changes. Your infrastructure matches the configuration.
-
+```
 
 Thanks for taking time to read this Azure Terrafy guide for Windows.
-```
+
 
 
 
