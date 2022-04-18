@@ -2,7 +2,7 @@
 Welcome to the Azure Terrafy guide for importing your existing Azure infrastructure under Terraform management. The installation steps in this guide focus on a Windows deployment, but the import steps are consistent across all environments (MacOS,Unix,Linux,BSD)
 
 
-## Deployment Steps
+# Deployment Steps
  
  ## Dependencies 
  - Install Terraform https://www.terraform.io/downloads
