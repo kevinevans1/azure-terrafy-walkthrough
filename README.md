@@ -41,8 +41,8 @@ Welcome to the Azure Terrafy guide for importing your existing Azure infrastruct
 ```
 
 ## Azure Terrafy
-```
 Create a new directory and use the tool to generate the supporting Terraform code to recreate all of those resources:
+```
  - mkdir aztfy_netrunner_demo
  - cd aztfy_netruuner_demo (This selects our newly created Azure Terrafy working directory)
  ```
