@@ -65,8 +65,16 @@ Run "terraform state list" in your working directory after a successful "Terrafo
  In our working directory run the following command 
  ```   
  - aztfy "your Azure external resource group name"
- ```   
-### Accept the defaults, in this example  which included all of the resources. Once the process is complete you will be greeted with a similar message below:
+ ```
+ ![Azure Terrafy](/assets/img/image1.png "Terrafy Initialize Screenshot")   
+### Accept the defaults, in this example  which included all of the resources.
+![Azure Terrafy](/assets/img/image2.png "Terrafy Import List Screenshot")   
+
+### The import process will begin as depicted here
+![Azure Terrafy](/assets/img/image3.png "Terrafy Import Screenshot")   
+
+### Once the process is complete you will be greeted with a similar message's below:
+![Azure Terrafy](/assets/img/image4.png "Terrafy End Of Process Screenshot")   
  ```
  Azure Terrafy
   Terraform state and the config are generated at: C:\Users\KevinEvans\win-local-dev\aztfy_netrunner_demo
@@ -194,6 +202,9 @@ resource "azurerm_network_interface" "res-2" {
 lets run a terraform plan on our recently imported terraform configuration (vm-resources) to verify the import was a success, hopefully you will be greeted by the below message
 ```
 No changes. Your infrastructure matches the configuration.
+
+
+Thanks for taking time to read this Azure Terrafy guide for Windows.
 ```
 
 
