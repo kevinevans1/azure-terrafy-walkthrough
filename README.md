@@ -23,11 +23,12 @@ Welcome to the Azure Terrafy guide for importing your existing Azure infrastruct
      - Select the PATH variable, then click Edit.
      - Click the New button, then type in the path where the Terraform & Terrafy executable is located.
 
-# Following are completed from the CLI (Windows Terminal) 
+# Following steps are completed from the CLI (Windows Terminal) 
 
-# Authenticate to Azure    
+## Authenticate to Azure
+We need to authenticate to Azure in order for Terrafy to read our target subscriptions \ resource groups.    
 
-### Azure Subscription Configuration
+### Azure Subscription Configuration:
 #### Azure CLI
 ```
 1. az login (login)
@@ -47,7 +48,7 @@ Create a new directory and use the tool to generate the supporting Terraform cod
  - cd aztfy_netruuner_demo (This selects our newly created Azure Terrafy working directory)
  ```
  
- ### Terraform Demo Plan Config Example
+ ### Terraform Demo Plan Config Example:
 
 See below an example terraform state list that was outputted from the demo terraform configuration files included in this repo. We will use the below state list to verify our imported Azure configuration into Terraform state using Azure Terrafy.
 ```
@@ -63,8 +64,8 @@ Run "terraform state list" in your working directory after a successful "Terrafo
  azurerm_windows_virtual_machine.vm_01
 ```
  
- ### Lets Run Azure Terrafy
- In our working directory run the following command 
+ ### Lets Run Azure Terrafy:
+ In our working directory run the following command:
  ```   
  - aztfy "your Azure external resource group name"
  ```
@@ -72,7 +73,7 @@ Run "terraform state list" in your working directory after a successful "Terrafo
 ### Accept the defaults, in this example  which included all of the resources.
 ![Azure Terrafy](/assets/img/image2.png "Terrafy Import List Screenshot")   
 
-### The import process will begin as depicted here
+### The import process will begin as depicted here:
 ![Azure Terrafy](/assets/img/image3.png "Terrafy Import Screenshot")   
 
 ### Once the process is complete you will be greeted with a similar message's below:
@@ -81,7 +82,7 @@ Run "terraform state list" in your working directory after a successful "Terrafo
  Azure Terrafy
   Terraform state and the config are generated at: C:\Users\KevinEvans\win-local-dev\aztfy_netrunner_demo
   ```
-  ### Imported Terraform working directory configuration
+  ### Imported Terraform working directory configuration:
   ```    
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
@@ -94,7 +95,7 @@ d----          18/04/2022    18:35                .terraform
 -a---          18/04/2022    18:39           9291 terraform.tfstate.backup
 ``` 
 
-### The provider.tf file contains the Terraform block and provider block
+### The provider.tf file contains the Terraform block and provider block:
 ``` 
 terraform {
   backend "local" {}
@@ -111,7 +112,7 @@ provider "azurerm" {
 }
 ``` 
 
-### The main.tf file contains definitions for 7 different resources which make up the demo VM deployment
+### The main.tf file contains definitions for 7 different resources which make up the demo VM deployment:
 ```
 resource "azurerm_network_security_rule" "res-3" {
   access                      = "Allow"
@@ -200,8 +201,8 @@ resource "azurerm_network_interface" "res-2" {
 }
 ```
 
-### Terraform plan seal test
-lets run a terraform plan on our recently imported terraform configuration (vm-resources) to verify the import was a success, hopefully you will be greeted by the below message
+### Terraform plan seal test:
+lets run a terraform plan on our recently imported terraform configuration (vm-resources) to verify the import was a success, hopefully you will be greeted by the below message.
 ```
 No changes. Your infrastructure matches the configuration.
 ```
