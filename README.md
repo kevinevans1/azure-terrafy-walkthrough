@@ -23,7 +23,7 @@ Welcome to the Azure Terrafy guide for importing your existing Azure infrastruct
      - Select the PATH variable, then click Edit.
      - Click the New button, then type in the path where the Terraform & Terrafy executable is located.
 
-# Following steps are completed from the CLI (Windows Terminal) 
+# The Following steps are completed from the CLI (Windows Terminal) 
 
 ## Authenticate to Azure
 We need to authenticate to Azure in order for Terrafy to read our target subscriptions \ resource groups.    
@@ -202,7 +202,7 @@ resource "azurerm_network_interface" "res-2" {
 ```
 
 ### Terraform plan seal test:
-lets run a terraform plan on our recently imported terraform configuration (vm-resources) to verify the import was a success, hopefully you will be greeted by the below message.
+lets run a terraform plan on our recently imported terraform configuration (vm-resources) to verify the import was a success, hopefully you will be greeted by the below message. Don't forget to run terraform init and terraform plan against imported resource group working directory.
 ```
 No changes. Your infrastructure matches the configuration.
 ```
