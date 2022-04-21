@@ -23,7 +23,7 @@ Welcome to the Azure Terrafy guide for importing your existing Azure infrastruct
      - Select the PATH variable, then click Edit.
      - Click the New button, then type in the path where the Terraform & Terrafy executable is located.
 
-# The Following steps are completed from the CLI (Windows Terminal) 
+# The following steps are completed from the CLI (Windows Terminal) 
 
 ## Authenticate to Azure
 We need to authenticate to Azure in order for Terrafy to read our target subscriptions \ resource groups.    
@@ -43,9 +43,10 @@ We need to authenticate to Azure in order for Terrafy to read our target subscri
 
 ## Azure Terrafy
 Create a new directory and use the tool to generate the supporting Terraform code to recreate all of those resources:
+example:
 ```
  - mkdir aztfy_netrunner_demo
- - cd aztfy_netruuner_demo (This selects our newly created Azure Terrafy working directory)
+ - cd aztfy_netrunner_demo (This selects our newly created Azure Terrafy working directory)
  ```
  
  ### Terraform Demo Plan Config Example:
