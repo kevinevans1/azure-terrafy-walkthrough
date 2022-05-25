@@ -1,3 +1,17 @@
+# Importing resources with Azure Terrafy
+
+Public GitHub repo hosting Azure Terrafy  - https://github.com/Azure/aztfy
+
+## Authors
+
+- Kevin Evans - GitHub: @kevinevans1 - Twitter: https://twitter.com/thekevinevans
+
+## Useful Links
+
+- [MS Docs Terraform on Azure](https://docs.microsoft.com/en-us/azure/developer/terraform/overview)
+- 
+
+## Pre-Reqs
 # azure-terrafy-walkthrough
 Welcome to the Azure Terrafy guide for importing your existing Azure infrastructure under Terraform management. The installation steps in this guide focus on a Windows deployment, but the import steps are consistent across all environments (MacOS,Unix,Linux,BSD)
 
@@ -5,16 +19,19 @@ Welcome to the Azure Terrafy guide for importing your existing Azure infrastruct
 # Deployment Steps
  
  ## Dependencies 
- - Install Terraform https://www.terraform.io/downloads
- - Install Azure Terrafy https://github.com/Azure/aztfy
- - PowerShell 7 https://github.com/PowerShell/PowerShell
- - Azure CLI https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-powershell
- - VSCode https://code.visualstudio.com/
- - Windows Terminal https://github.com/microsoft/terminal
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/)
+- [GIT](https://git-scm.com/downloads)
+- [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
+- [Terraform](https://www.terraform.io/downloads)
+- [aztfy](https://github.com/Azure/aztfy)
+- [Windows Terminal](https://github.com/microsoft/terminal)
+- Azure Subscription
+  - Create a free subscription [here](https://azure.microsoft.com/free/)
 
- 1. Install and download prerequisites
-2. Configure VS Code (Extensions)
-3. Configure Terraform \ Azure Terrafy  (Extract Terraform executable to "c:\terraform", extract Azure Terrafy to "c:\aztfy")
+## Instructions
+
+1. Download and install prerequisites
+2. Configure Terraform \ Azure Terrafy  (Extract Terraform executable to "c:\terraform", extract Azure Terrafy to "c:\aztfy")
    - To add the Terraform\ Azure Terrafy executable directory's to your PATH variable:
 
      - Click on the Start menu and search for Settings. Open the Settings app.
@@ -22,35 +39,32 @@ Welcome to the Azure Terrafy guide for importing your existing Azure infrastruct
      - On the System Properties window, select Environment Variables.
      - Select the PATH variable, then click Edit.
      - Click the New button, then type in the path where the Terraform & Terrafy executable is located.
+3. Clone this git repo to your local machine
+```
+git clone https://github.com/kevinevans1/azure-terrafy-walkthrough
+```
 
-# The following steps are completed from the CLI (Windows Terminal) 
+## The following steps are completed from the CLI (Windows Terminal) 
 
 ## Authenticate to Azure
-We need to authenticate to Azure in order for Terrafy to read our target subscriptions \ resource groups.    
+We need to authenticate to Azure in order for Terrafy to read our target subscriptions \ resource groups
 
 ### Azure Subscription Configuration:
+
 #### Azure CLI
 ```
 1. az login (login)
 2. set azure subscription reference az account set --subscription "my sub"
 ```
 
-#### Azure PowerShell
-```
-1. Connect-AzAccount
-2. Set-AzContext -Subscription "Subscription String"
-```
-
 ## Azure Terrafy
-Create a new directory and use the tool to generate the supporting Terraform code to recreate all of those resources:
+Create a new directory for the tool to use a working directory.
 example:
 ```
  - mkdir aztfy_netrunner_demo
  - cd aztfy_netrunner_demo (This selects our newly created Azure Terrafy working directory)
  ```
- 
- ### Terraform Demo Plan Config Example:
-
+## Terraform Demo Plan Config Example
 See below an example terraform state list that was outputted from the demo terraform configuration files included in this repo. We will use the below state list to verify our imported Azure configuration into Terraform state using Azure Terrafy.
 ```
 Run "terraform state list" in your working directory after a successful "Terraform apply" to your Azure environment. This will output a similar resource list below for cross-reference.
@@ -68,17 +82,20 @@ Run "terraform state list" in your working directory after a successful "Terrafo
  ### Lets Run Azure Terrafy:
  In our working directory run the following command:
  ```   
- - aztfy "your Azure external resource group name"
+ aztfy "your Azure external resource group name"
  ```
- ![Azure Terrafy](/assets/img/image1.png "Terrafy Initialize Screenshot")   
+ ![Azure Terrafy](/assets/img/image1.png "Terrafy Initialize Screenshot")
 ### Accept the defaults, in this example  which included all of the resources.
-![Azure Terrafy](/assets/img/image2.png "Terrafy Import List Screenshot")   
+
+Exception: You will see that res-1, will be detected as a unknown resource by the aztfy tool. In this instance amend the line with the resource type deployed.In this instance this would be "azurerm_windows_virtual_machine"
+
+![Azure Terrafy](/assets/img/image2.png "Terrafy Import List Screenshot")
 
 ### The import process will begin as depicted here:
-![Azure Terrafy](/assets/img/image3.png "Terrafy Import Screenshot")   
+![Azure Terrafy](/assets/img/image3.png "Terrafy Import Screenshot")
 
 ### Once the process is complete you will be greeted with a similar message's below:
-![Azure Terrafy](/assets/img/image4.png "Terrafy End Of Process Screenshot")   
+![Azure Terrafy](/assets/img/image4.png "Terrafy End Of Process Screenshot")
  ```
  Azure Terrafy
   Terraform state and the config are generated at: C:\Users\KevinEvans\win-local-dev\aztfy_netrunner_demo
