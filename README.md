@@ -9,7 +9,7 @@ Public GitHub repo hosting Azure Terrafy  - https://github.com/Azure/aztfy
 ## Useful Links
 
 - [MS Docs Terraform on Azure](https://docs.microsoft.com/en-us/azure/developer/terraform/overview)
-- 
+- [Terraform AzureRM provider documentation](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
 
 ## Pre-Reqs
 # azure-terrafy-walkthrough
