@@ -54,7 +54,7 @@ We need to authenticate to Azure in order for Terrafy to read our target subscri
 #### Azure CLI
 ```
 1. az login (login)
-2. set azure subscription reference az account set --subscription "my sub"
+2. set azure subscription reference "az account set --subscription <my sub>"
 ```
 
 ## Azure Terrafy
