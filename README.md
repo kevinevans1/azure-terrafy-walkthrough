@@ -11,6 +11,8 @@ Public GitHub repo hosting Azure Terrafy  - https://github.com/Azure/aztfy
 - [MS Docs Terraform on Azure](https://docs.microsoft.com/en-us/azure/developer/terraform/overview)
 - [Terraform AzureRM provider documentation](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
 
+- [Streaming Clouds Azure Terraform Stream](https://www.youtube.com/watch?v=cev9_gzMbmE)
+
 
 # Azure-terrafy-walkthrough
 Welcome to the Azure Terrafy guide for importing your existing Azure infrastructure under Terraform management. The installation steps in this guide focus on a Windows deployment, but the import steps are consistent across all environments (MacOS,Unix,Linux,BSD)
